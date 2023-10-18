@@ -1,0 +1,31 @@
+ticket_id,subject,description,tags
+61979,GGET (WeHo) - Toast Orders not Printing in BOH,"Hi science, I have confirmed that toast orders that are being placed on the craver app are still not being printed to our back of house printer. It seems to be the only thing still that is not being pushed through to our kitchen. ","craver, customer, gget, lang_automated_alt2w6ra02vqoyxp, macro_applied, online_ordering__performance_issue, order_status, pos_configuration, printer, toast, user_responded"
+120331,Go Get Em Tiger (GGET) - GGET loz feliz- printers,"can i get some support troubleshooting my KDS printers?
+
+---
+
+Ticket created from a Slack [message](https://scienceoncall.slack.com/archives/C03GSQH2WAC/p1694111381181859?thread_ts=1694111040.310289&cid=C03GSQH2WAC) by [Natalia Chan](https://scienceoncall.slack.com/team/U056SHX91EW) in #gget-science.","about_me, created_from_slack, customer, documentation_completed, gget, macro_applied, no_survey, printers__other_problem/question, tasks_done, tasks_present, toast"
+67283,"GGET - Highland Park - 86 Toast, Avo toast and Whipped Feta toast ","Hello we are out of sourdough could you please remove 
+Toast 
+Avo toast 
+And whipped feta toast
+Offline please ","86__86-temporary, 86_temp, customer, gget, lang_automated_alt2w6ra02vqoyxp, lang_automated_jntnmiktxiluaoqv, lang_automated_ktmebvst8ethb5q3, macro_applied, pos_configuration, toast, toast_network_troubleshooting"
+55231,GGET - Larchmont - Tickets Not Printing To Kitchen ,Good morning! We're getting dropped tickets that aren't printing to the kitchen printer again. My assumption is that it's still a down service issue,"customer, gget, macro_applied, printer, printers__printer_issue-hardware, toast"
+77564,Go Get Em Tiger (GGET) - Highland Park - 86 toast,Hello :) we are out of toast again could you please take it offline ,"86__86-temporary, customer, gget, lang_automated_alt2w6ra02vqoyxp, lang_automated_jntnmiktxiluaoqv, lang_automated_ktmebvst8ethb5q3, macro_applied, pos_configuration, square, toast_network_troubleshooting"
+80390,Go Get Em Tiger Highland Park- DD Orders Not Printing,Hello! Ariel from GGET hlp here. Our printer is not printing our online orders although everything seems to look correct ,"about_me, customer, gget, macro_applied, online_ordering__performance_issue, printer, toast"
+92824,Go Get Em Tiger (GGET) - Highland Park - 86 Avo Toast,Hello :) we are 86 avo toast if you could take it offline please ,"86__86-temporary, about_me, customer, gget, lang_automated_alt2w6ra02vqoyxp, lang_automated_jntnmiktxiluaoqv, lang_automated_ktmebvst8ethb5q3, macro_applied, no_survey, pos_configuration, square, toast_network_troubleshooting"
+76490,GGET HLP - 86 and un-86 Requests,"Science! We are back on Tortillas for burritos and we can put the Toast menu items back as well! 
+
+
+
+We are out of Focaccia for the Tuna nd Chicken Salad sandwiches. Can we take both offline please 🙏🏽 
+","86__86-temporary, customer, gget, lang_automated_alt2w6ra02vqoyxp, lang_automated_jntnmiktxiluaoqv, lang_automated_ktmebvst8ethb5q3, pos_configuration, square, toast_network_troubleshooting"
+109407,Go Get Em Tiger (GGET) - Highland Park - double printing online orders,Hi! At Montana and we're getting three tickets printing for online orders!,"4_days_aged, 7_days_aged, about_me, customer, gget, macro_applied, printers__other_problem/question, toast, user_responded"
+57877,GGET - Larchmont - Customer Name Required on All Transactions,Could we turn off online orders for the time being,"close_now, craver, customer, gget, macro_applied, no_response_right_now, no_survey, online, online_ordering__pause_online_ordering"
+124615,Go Get Em Tiger (GGET) - The Row - Broken iPad  - Consultation,"Call from: +1 (714) 745-1676
+Call to: +1 (312) 521-0016
+Time of call: September 25, 2023 at 10:08:30 PM
+Answered by: Jose Blanquez","about_me, customer, documentation_completed, documentation_needed, gget, macro_applied, no_survey, phone_template, pos__other_problem/question, tasks_done, tasks_present, toast"
+107899,Go Get Em Tiger (GGET) - Larchmont - Receipt Printer is Down ,"Conversation with Nao Ruiz
+
+URL: None","about_me, customer, gget, macro_applied, pos__printer_hardware, toast, troubleshooting_template"

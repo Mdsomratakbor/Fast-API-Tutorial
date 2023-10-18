@@ -1,71 +1,12 @@
 from fastapi import FastAPI, HTTPException, Path
 from pydantic import BaseModel
-
+import csv
 import requests
 import json
  
 # Create the FastAPI app
 app= FastAPI()
 
-class Person(BaseModel):
-    name: str
-    age: int
-
-infos = {
-    1: {
-        "name": "John",
-        "age": 20
-    },
-    2: {
-        "name": "Jane",
-        "age": 25
-    },
-    3: {
-        "name": "Bob",
-        "age": 30
-    },
-    4: {
-        "name": "Alice",
-        "age": 35
-    }
-}
-
-@app.get("/")
-def home():
-    return {"message": "Hello World"}
-
-@app.get("/about")
-def home():
-    return {"about": "This is a simple API created using FastAPI"}
-
-@app.get("/get-info/{id}")
-
-def get_info(id: int ):
-    return infos[id]
-
-
-@app.get("/get-by-name")
-def get_name(name: str):
-    for i in infos:
-        if infos[i]["name"] == name:
-            return infos[i]
-    raise HTTPException(status_code=404, detail="Name not found")
-
-
-@app.post("/create-info")
-def create_info(person_id: int, person: Person):
-    if person_id in person:
-        return {"Error": "Person already exists"}
-    
-    infos[person_id] = person
-    return infos[person_id]
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=9000)
-# run the app with uvicorn
-# uvicorn main:app --reload
 
 
 
@@ -80,8 +21,8 @@ endpoint_3 = f'https://{subdomain}.zendesk.com/api/v2/search.json?query=gget,toa
 # Set up the HTTP basic authentication
 auth = (f'{email}/token', api_token)
  
-@ app.get("/get-tickets")
-def get_tickets():
+@ app.get("/get-tickets-others")
+def get_tickets_others():
     # Make the HTTP GET request to the Zendesk API
     response = requests.get(endpoint_3, auth=auth)
     # Check for a valid response
@@ -90,9 +31,69 @@ def get_tickets():
         return None
     # Parse the JSON response
     tickets_data = response.json()
+    convert_csv(tickets_data, "others_outout.csv")
+    return tickets_data
+
+@ app.get("/get-tickets-networking")
+def get_tickets_networking():
+    # Make the HTTP GET request to the Zendesk API
+    response = requests.get(endpoint_2, auth=auth)
+    # Check for a valid response
+    if response.status_code != 200:
+        print(f'Failed to retrieve tickets: {response.content}')
+        return None
+    # Parse the JSON response
+    tickets_data = response.json()
+    convert_csv(tickets_data, "networking_outout.csv")
     return tickets_data
  
+ 
+@ app.get("/get-tickets-ordering")
+def get_tickets_ordering():
+    # Make the HTTP GET request to the Zendesk API
+    response = requests.get(endpoint_1, auth=auth)
+    # Check for a valid response
+    if response.status_code != 200:
+        print(f'Failed to retrieve tickets: {response.content}')
+        return None
+    # Parse the JSON response
+    tickets_data = response.json()
+    # print(json.dumps(tickets_data, indent=2))
+    convert_csv(tickets_data, "ordering_outout.csv")
+    return tickets_data
 # if __name__ == '__main__':
-#     tickets = get_tickets()
+#     tickets = get_tickets_ordering()
 #     if tickets:
 #         print(json.dumps(tickets, indent=2))
+
+
+
+
+# Define custom labels for the CSV columns
+field_names = ["ticket_id", "subject", "description", "tags"]
+
+def convert_csv(json_data, file_name):
+    # Open a CSV file for writing
+    with open(file_name, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=field_names)
+
+        # Write the header row with custom labels
+        writer.writeheader()
+
+        # Write the data from the JSON object
+        for item in json_data["results"]:
+            # Map the JSON keys to custom labels for the CSV file
+            custom_row = {
+                 "ticket_id": item["id"],
+                 "subject": item["subject"],
+                 "description": item["description"],
+                 "tags": ", ".join(item["tags"])
+            }
+            writer.writerow(custom_row)
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=9000)
+# run the app with uvicorn
+# uvicorn main:app --reload
